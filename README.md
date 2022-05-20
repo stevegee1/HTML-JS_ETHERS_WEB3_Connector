@@ -13,4 +13,4 @@ This is a simple readme file for connecting your smartcontract to frontend using
 * If you can run *node --version* in your terminal with no error, then your have installed nodejs else visit 
   nodejs [documentation](https://nodejs.org/en/)
 * *Note:* full package of nodejs comes with npm
-* npm can be used to install ethers library, *npm --install save ethers* 
+* npm can be used to install ethers library, <mark> *npm --install save ethers* </mark>

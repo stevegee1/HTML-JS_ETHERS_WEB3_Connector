@@ -1,11 +1,18 @@
+//using ethers library
+
 const { ethers } = require("ethers");
 
+
+//connect to ethereum account(s)
 async function connect() {
     if (typeof window.ethereum !== "undefined") {
         ethereum.request({ method: 'eth_requestAccounts' });
     }
 }
+
+//execute any contract function
 async function execute() {
+    //We need the following inorder to execute any contract function:
     //contractAddress
     //ABI
     //A signer; any account that calls the function
@@ -102,9 +109,14 @@ async function execute() {
     ];
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     await provider.send("eth_requestAccounts", []);
+
+    //get the account
     const signer = provider.getSigner();
 
+    //ethers library will require the contractAddress, abi and the account that calls the funtion
+    //inorder to sign it
     const contract = new ethers.Contract(contractAddress, abi, signer);
+    //calling method "store" within the contract
     await contract.store(42);
 
 
